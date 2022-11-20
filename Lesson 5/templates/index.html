@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome!</title>
+    </head>
+    <body>
+        <form action="/process">
+            <textarea name="data" rows="5" cols="50" ></textarea>
+            <button>SEND!</button>
+        </form>
+        <div>
+            {{contents|safe}}
+        </div>
+    </body>
+</html>
