@@ -21,4 +21,12 @@ def process():
     temp.write(request.args.get('data') + "\n")
     return redirect('/')
 
+@app.route('/time')
+def time():
+    return render_template("time.html", time=str(datetime.now()))
+
+@app.route('/gettime')
+def getTime():
+    return str(datetime.now())
+
 app.run(host="0.0.0.0", port=8081)
