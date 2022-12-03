@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Database Example</title>
+    </head>
+    <body>
+        <form action="/register">
+            <input name="login"></input>
+            <input name="password" type="password"></input>
+            <button>SEND!</button>
+        </form>
+        Users registered:
+        <hr />
+        <div>
+            {{users|safe}}
+        </div>
+    </body>
+</html>
