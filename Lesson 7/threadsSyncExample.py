@@ -8,8 +8,9 @@ def incrementNumber(threadNumber):
     global number
     while number < 100:
         with lock:
-            number = number + 1
-            print ("Thread #" + str(threadNumber) + ":" + str(number))
+            if number < 100:
+                number = number + 1
+                print ("Thread #" + str(threadNumber) + ":" + str(number))
         time.sleep(0.1)
 
 def manager():
