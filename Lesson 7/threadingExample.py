@@ -12,8 +12,8 @@ def manager(lines):
     for thread in threads:
         thread.start()
 
-    #for thread in threads:
-     #   thread.join()
+    for thread in threads:
+        thread.join()
 
 lines = [
     "Hello world",
