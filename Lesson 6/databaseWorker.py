@@ -20,8 +20,8 @@ def prepareDb(name):
     init_tables(conn)
     conn.close()
 
-def getLogins(db):
-    connection = init_conn()
+def getLogins(name):
+    connection = init_conn(name)
     sql = "SELECT * FROM users;"
     cursor = connection.cursor()
     cursor.execute(sql)
