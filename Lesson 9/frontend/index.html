@@ -15,9 +15,6 @@
             const xhttp = new XMLHttpRequest();
             login = document.getElementById('login').value
             message = document.getElementById('message').value
-            xhttp.onload = function() {
-                document.getElementById("messages").innerHTML = this.responseText;
-            }
             xhttp.open("GET", "http://192.168.0.106:8081/send?login=" + login + "&message=" + message, true);
             xhttp.send();
         }
