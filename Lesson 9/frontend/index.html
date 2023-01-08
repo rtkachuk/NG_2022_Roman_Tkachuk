@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chatroulette</title>
+    </head>
+    <body>
+        <input id="login" name="login"></input>
+        <input id="message" name="message"></input>
+        <button onclick="sendMessage()">SEND!</button>
+        <hr />
+        <div id="messages"></div>
+    </body>
+    <script>
+        function sendMessage() {
+            const xhttp = new XMLHttpRequest();
+            login = document.getElementById('login').value
+            message = document.getElementById('message').value
+            xhttp.onload = function() {
+                document.getElementById("messages").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "http://192.168.0.106:8081/send?login=" + login + "&message=" + message, true);
+            xhttp.send();
+        }
+        function getMessages() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById("messages").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "http://192.168.0.106:8081/messages", true);
+            xhttp.send();
+        }
+        window.setInterval(() => {
+            getMessages();
+        }, 300);
+    </script>
+</html>
